@@ -10,16 +10,16 @@ export const meta = () => {
     },
   ];
 };
-const auth = () => {
+const Auth = () => {
   const { auth, isLoading } = usePuterStore();
   const location = useLocation();
   const navigate = useNavigate();
-  const next = location.search.split("next=")[1];
+  const nextRoute = location.search.split("next=")[1];
   useEffect(() => {
     if (auth.isAuthenticated) {
-      navigate(next);
+      navigate(nextRoute);
     }
-  }, [auth.isAuthenticated, next]);
+  }, [auth.isAuthenticated, nextRoute]);
   return (
     <main className="bg-cover bg-[url('/images/bg-main.svg')] min-h-screen flex items-center justify-center">
       <div className="gradient-border shadow-lg">
@@ -53,4 +53,4 @@ const auth = () => {
   );
 };
 
-export default auth;
+export default Auth;
