@@ -12,7 +12,7 @@ Notes:-
  ✅ Good for quick typing when the props are simple or used only in this one place.
 */
 const ResumeCard = ({
-  resume: { id, jobTitle, imagePath, resumePath, companyName, feedback },
+  resume: { id, JobTitle, imagePath, resumePath, CompanyName, feedback },
 }: {
   resume: Resume;
 }) => {
@@ -27,6 +27,7 @@ const ResumeCard = ({
     };
     loadresume();
   }, [imagePath]);
+  console.log(CompanyName);
 
   return (
     <Link
@@ -35,14 +36,14 @@ const ResumeCard = ({
     >
       <div className="resume-card-header">
         <div className="flex flex-col gap-2">
-          {companyName && (
-            <h2 className="text-black font-bold break-words">{companyName}</h2>
+          {CompanyName && (
+            <h2 className="text-black font-bold break-words">{CompanyName}</h2>
           )}
 
-          {jobTitle && (
-            <h3 className="text-lg break-words text-gray-500">{jobTitle}</h3>
+          {JobTitle && (
+            <h3 className="text-lg break-words text-gray-500">{JobTitle}</h3>
           )}
-          {!companyName && !jobTitle && (
+          {!CompanyName && !JobTitle && (
             <h2 className="text-black font-bold">Resume</h2>
           )}
         </div>

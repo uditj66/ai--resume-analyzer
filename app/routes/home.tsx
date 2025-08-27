@@ -39,6 +39,8 @@ export default function Home() {
     loadResumes();
   }, []);
 
+  resumes.map((resume) => console.log(resume?.JobTitle));
+
   return (
     <main className="bg-cover bg-[url('/images/bg-main.svg')] min-h-screen">
       <Navbar />
@@ -72,7 +74,7 @@ export default function Home() {
         {!loadingResumes && resumes.length === 0 && (
           <div className="flex flex-col items-center justify-center mt-10 gap-4">
             <Link
-              to={"/"}
+              to={"/upload"}
               className="primary-button w-fit text-xl font-semibold"
             >
               Upload Resume
